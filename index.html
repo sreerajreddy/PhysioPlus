@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="PhysioPlus Clinic — Expert physiotherapy care by Dr. Siva Kalyan Reddy. Book your appointment online today."/>
+<title>PhysioPlus — Dr. Siva Kalyan Reddy, PT</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;color:#1a1a2e;background:#fff;scroll-behavior:smooth}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e8f4f0;display:flex;justify-content:space-between;align-items:center;padding:1rem 5%}
+.logo{font-size:1.3rem;font-weight:700;color:#0f7c5c}.logo span{color:#1a1a2e}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.93rem;color:#444;transition:color .2s}
+.nav-links a:hover{color:#0f7c5c}
+.nav-cta{background:#0f7c5c;color:#fff!important;padding:.5rem 1.2rem;border-radius:6px;font-weight:600!important}
+.nav-cta:hover{background:#0a6048!important}
+.hero{display:flex;align-items:center;justify-content:space-between;padding:5rem 5%;gap:2rem;background:linear-gradient(135deg,#f0faf6 0%,#e8f7f2 100%)}
+.hero-text{max-width:560px}
+.hero-tag{display:inline-block;background:#d4f0e6;color:#0a6048;font-size:.8rem;font-weight:600;padding:.3rem .8rem;border-radius:20px;margin-bottom:1.2rem}
+.hero h1{font-size:2.8rem;font-weight:700;line-height:1.2;color:#1a1a2e;margin-bottom:1rem}
+.hero h1 span{color:#0f7c5c}
+.hero p{font-size:1.05rem;color:#555;line-height:1.7;margin-bottom:2rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:#0f7c5c;color:#fff;padding:.8rem 1.8rem;border-radius:8px;font-weight:600;font-size:.95rem;transition:background .2s;cursor:pointer;border:none}
+.btn-primary:hover{background:#0a6048}
+.btn-outline{border:2px solid #0f7c5c;color:#0f7c5c;padding:.8rem 1.8rem;border-radius:8px;font-weight:600;font-size:.95rem;transition:all .2s}
+.btn-outline:hover{background:#0f7c5c;color:#fff}
+.hero-img{flex-shrink:0;width:320px;height:380px;border-radius:20px;overflow:hidden;background:#c2ead8}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:top}
+.stats{display:flex;justify-content:center;gap:3rem;padding:2.5rem 5%;background:#fff;border-bottom:1px solid #eef}
+.stat{text-align:center}
+.stat-num{font-size:2rem;font-weight:700;color:#0f7c5c}
+.stat-label{font-size:.85rem;color:#666;margin-top:.2rem}
+section{padding:5rem 5%}
+.section-tag{font-size:.8rem;font-weight:600;color:#0f7c5c;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.6rem}
+h2{font-size:2rem;font-weight:700;color:#1a1a2e;margin-bottom:1rem}
+.section-sub{font-size:1rem;color:#666;line-height:1.7;max-width:560px;margin-bottom:3rem}
+.about{background:#f9fffe;display:flex;gap:3rem;align-items:center;flex-wrap:wrap}
+.about-img{width:280px;height:320px;border-radius:16px;overflow:hidden;flex-shrink:0;background:#b7e4d0}
+.about-img img{width:100%;height:100%;object-fit:cover;object-position:top}
+.about-text{flex:1;min-width:260px}
+.about-text p{color:#555;line-height:1.8;margin-bottom:1rem}
+.credentials{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem}
+.cred-badge{background:#d4f0e6;color:#0a6048;font-size:.78rem;font-weight:600;padding:.3rem .8rem;border-radius:20px}
+.services{background:#fff}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.service-card{border:1px solid #e2f4ed;border-radius:12px;padding:1.5rem;transition:box-shadow .2s,transform .2s}
+.service-card:hover{box-shadow:0 8px 24px rgba(15,124,92,.1);transform:translateY(-3px)}
+.svc-icon{font-size:2rem;margin-bottom:1rem}
+.service-card h3{font-size:1rem;font-weight:600;margin-bottom:.5rem;color:#1a1a2e}
+.service-card p{font-size:.87rem;color:#666;line-height:1.6}
+.hiw{background:#f0faf6}
+.steps{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;align-items:flex-start}
+.step{text-align:center;max-width:240px}
+.step-num{width:56px;height:56px;border-radius:50%;background:#0f7c5c;color:#fff;font-size:1.3rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.step h3{font-weight:600;margin-bottom:.5rem}
+.step p{font-size:.88rem;color:#666;line-height:1.6}
+.testimonials{background:#fff}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.testi-card{border:1px solid #e8f4f0;border-radius:12px;padding:1.5rem;background:#fafdfc}
+.stars{color:#f5a623;font-size:1rem;margin-bottom:.8rem}
+.testi-card p{font-size:.9rem;color:#444;line-height:1.7;margin-bottom:1rem}
+.testi-author{display:flex;align-items:center;gap:.7rem}
+.avatar{width:36px;height:36px;border-radius:50%;background:#0f7c5c;color:#fff;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600}
+.author-name{font-size:.88rem;font-weight:600}
+.author-role{font-size:.78rem;color:#888}
+.booking{background:#1a1a2e;color:#fff}
+.booking h2{color:#fff}
+.booking .section-sub{color:#9ca3af}
+.booking-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.booking-info h3{font-size:1.1rem;font-weight:600;margin-bottom:1rem}
+.info-item{display:flex;gap:.8rem;margin-bottom:1rem;align-items:flex-start}
+.info-icon{font-size:1.1rem;margin-top:.1rem}
+.info-text{font-size:.9rem;color:#d1d5db;line-height:1.5}
+.booking-form{background:#fff;border-radius:16px;padding:2rem}
+.booking-form h3{font-size:1.1rem;font-weight:600;color:#1a1a2e;margin-bottom:1.5rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.form-group label{font-size:.82rem;font-weight:600;color:#444}
+.form-group input,.form-group select,.form-group textarea{border:1px solid #ddd;border-radius:8px;padding:.6rem .9rem;font-size:.9rem;color:#1a1a2e;outline:none;transition:border .2s;font-family:inherit;background:#fff}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#0f7c5c}
+.form-group textarea{resize:vertical;min-height:80px}
+.submit-btn{width:100%;background:#0f7c5c;color:#fff;border:none;border-radius:8px;padding:.85rem;font-size:1rem;font-weight:600;cursor:pointer;transition:background .2s}
+.submit-btn:hover{background:#0a6048}
+.submit-btn:disabled{background:#aaa;cursor:not-allowed}
+.success-msg{display:none;text-align:center;padding:1rem;color:#0a6048;font-weight:600;background:#d4f0e6;border-radius:8px;margin-top:1rem;font-size:.95rem}
+.error-msg{display:none;text-align:center;padding:1rem;color:#b91c1c;font-weight:600;background:#fee2e2;border-radius:8px;margin-top:1rem;font-size:.95rem}
+footer{background:#111827;color:#9ca3af;padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-size:1.1rem;font-weight:700;color:#fff}
+.footer-logo span{color:#34d399}
+footer p{font-size:.82rem}
+.footer-links{display:flex;gap:1.5rem;list-style:none}
+.footer-links a{font-size:.82rem;color:#9ca3af;transition:color .2s}
+.footer-links a:hover{color:#34d399}
+@media(max-width:768px){
+  .hero{flex-direction:column;text-align:center;padding:3rem 5%}
+  .hero-img{width:240px;height:280px}
+  .hero h1{font-size:2rem}
+  .hero-btns{justify-content:center}
+  .stats{gap:1.5rem;flex-wrap:wrap}
+  .about{flex-direction:column}
+  .about-img{width:100%;height:260px}
+  .booking-wrap{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  nav .nav-links{gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Physio<span>Plus</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how-it-works">Process</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#booking" class="nav-cta">Book now</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-tag">&#10003; Certified Physiotherapist — PT</div>
+    <h1>Restore Movement.<br><span>Reclaim Your Life.</span></h1>
+    <p>Expert physiotherapy care tailored to your recovery goals. Whether it's sports injuries, post-surgery rehab, or chronic pain — we help you get back to your best.</p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn-primary">Book an appointment</a>
+      <a href="#services" class="btn-outline">View services</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="doctor.jpg" alt="Dr. Siva Kalyan Reddy" onerror="this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.fontSize='7rem';this.parentElement.innerHTML='👨‍⚕️'"/>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">1,200+</div><div class="stat-label">Patients treated</div></div>
+  <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Years experience</div></div>
+  <div class="stat"><div class="stat-num">98%</div><div class="stat-label">Satisfaction rate</div></div>
+  <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Specialisations</div></div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-img">
+    <img src="doctor.jpg" alt="Dr. Siva Kalyan Reddy" onerror="this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.fontSize='6rem';this.parentElement.innerHTML='👨‍⚕️'"/>
+  </div>
+  <div class="about-text">
+    <div class="section-tag">About us</div>
+    <h2>Meet Dr. Siva Kalyan Reddy</h2>
+    <p>Dr. Siva Kalyan Reddy is a qualified Physiotherapist (PT) with hands-on expertise in musculoskeletal rehabilitation, sports injury management, and pain relief therapies. His calm, patient-first approach ensures every individual receives a personalised recovery plan.</p>
+    <p>Dedicated to evidence-based physiotherapy, Dr. Kalyan works closely with patients across all age groups — from athletes recovering from injuries to elderly patients regaining mobility and independence.</p>
+    <div class="credentials">
+      <span class="cred-badge">BPT / MPT Certified</span>
+      <span class="cred-badge">Sports Physio</span>
+      <span class="cred-badge">Manual Therapy</span>
+      <span class="cred-badge">Dry Needling</span>
+      <span class="cred-badge">Post-Surgery Rehab</span>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-tag">What we treat</div>
+  <h2>Our services</h2>
+  <p class="section-sub">Comprehensive physiotherapy services designed to address a wide range of conditions and help you recover faster.</p>
+  <div class="services-grid">
+    <div class="service-card"><div class="svc-icon">🏃</div><h3>Sports injury rehab</h3><p>ACL tears, sprains, strains, and performance recovery programs for athletes at all levels.</p></div>
+    <div class="service-card"><div class="svc-icon">🦴</div><h3>Post-surgery rehab</h3><p>Structured recovery plans following joint replacements, spinal surgery, or orthopaedic procedures.</p></div>
+    <div class="service-card"><div class="svc-icon">🔄</div><h3>Back & neck pain</h3><p>Evidence-based treatment for chronic and acute spinal conditions, postural correction, and disc issues.</p></div>
+    <div class="service-card"><div class="svc-icon">🧠</div><h3>Neurological rehab</h3><p>Rehabilitation support for stroke recovery, Parkinson's disease, and balance disorders.</p></div>
+    <div class="service-card"><div class="svc-icon">🤸</div><h3>Manual therapy</h3><p>Hands-on joint mobilisation, soft tissue techniques, and dry needling for pain relief.</p></div>
+    <div class="service-card"><div class="svc-icon">🧓</div><h3>Elderly care</h3><p>Fall prevention, mobility programs, and strength training tailored for older adults.</p></div>
+  </div>
+</section>
+
+<section class="hiw" id="how-it-works">
+  <div style="text-align:center">
+    <div class="section-tag">The process</div>
+    <h2>How it works</h2>
+    <p class="section-sub" style="margin:0 auto 3rem">Getting started is simple. Three steps to a healthier, pain-free you.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><h3>Book online</h3><p>Choose your service, pick a convenient date and time, and submit your booking in minutes.</p></div>
+    <div style="font-size:2rem;color:#c2ead8;padding-top:1rem">→</div>
+    <div class="step"><div class="step-num">2</div><h3>Initial assessment</h3><p>Dr. Kalyan will conduct a thorough evaluation and design a personalised treatment plan.</p></div>
+    <div style="font-size:2rem;color:#c2ead8;padding-top:1rem">→</div>
+    <div class="step"><div class="step-num">3</div><h3>Recover & thrive</h3><p>Follow your tailored program, track progress, and get back to doing what you love — pain free.</p></div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="section-tag">Patient reviews</div>
+  <h2>What our patients say</h2>
+  <p class="section-sub">Real stories from people who've transformed their health with PhysioPlus.</p>
+  <div class="testi-grid">
+    <div class="testi-card"><div class="stars">★★★★★</div><p>After my ACL surgery, I was told I might not play football again. Dr. Kalyan's rehab program got me back on the field in 6 months. Truly life-changing.</p><div class="testi-author"><div class="avatar">RK</div><div><div class="author-name">Rahul K.</div><div class="author-role">Football player</div></div></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>I had chronic lower back pain for 3 years. After just 8 sessions, I'm pain-free and back to running. The personalised attention here is unlike any clinic I've visited.</p><div class="testi-author"><div class="avatar">PM</div><div><div class="author-name">Priya M.</div><div class="author-role">Marathon runner</div></div></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>My mother had a stroke and we were worried about her mobility. The neurological rehab program here gave her back so much independence. We are deeply grateful.</p><div class="testi-author"><div class="avatar">AS</div><div><div class="author-name">Anika S.</div><div class="author-role">Caregiver</div></div></div></div>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="section-tag" style="color:#34d399">Book an appointment</div>
+  <h2>Ready to start your recovery?</h2>
+  <p class="section-sub">Fill in the form and Dr. Kalyan will confirm your appointment within 24 hours.</p>
+  <div class="booking-wrap">
+    <div class="booking-info">
+      <h3>Clinic information</h3>
+      <div class="info-item"><div class="info-icon">📍</div><div class="info-text">Bengaluru, Karnataka</div></div>
+      <div class="info-item"><div class="info-icon">🕐</div><div class="info-text">Mon – Sat: 8:00 AM – 7:00 PM<br>Sunday: 10:00 AM – 2:00 PM</div></div>
+      <div class="info-item"><div class="info-icon">📞</div><div class="info-text">+91 72072 31431</div></div>
+      <div class="info-item"><div class="info-icon">✉️</div><div class="info-text">sreerajreddy5254@gmail.com</div></div>
+      <div style="margin-top:2rem;padding:1.2rem;background:rgba(255,255,255,.07);border-radius:12px;border:1px solid rgba(255,255,255,.1)">
+        <p style="font-size:.85rem;color:#9ca3af;line-height:1.7">Every booking is sent directly to Dr. Kalyan's email. You will receive a confirmation call or message within 24 hours to confirm your slot.</p>
+      </div>
+    </div>
+    <div class="booking-form">
+      <h3>Book your session</h3>
+      <div id="bookingFormWrap">
+        <div class="form-row">
+          <div class="form-group"><label>First name *</label><input type="text" id="fname" placeholder="Rahul" required/></div>
+          <div class="form-group"><label>Last name *</label><input type="text" id="lname" placeholder="Kumar" required/></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Phone number *</label><input type="tel" id="phone" placeholder="+91 98765 43210" required/></div>
+          <div class="form-group"><label>Email address</label><input type="email" id="email" placeholder="you@email.com"/></div>
+        </div>
+        <div class="form-group">
+          <label>Service required *</label>
+          <select id="service" required>
+            <option value="">Select a service</option>
+            <option>Sports injury rehab</option>
+            <option>Post-surgery rehab</option>
+            <option>Back & neck pain</option>
+            <option>Neurological rehab</option>
+            <option>Manual therapy</option>
+            <option>Elderly care</option>
+            <option>Other / General consultation</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Preferred date *</label><input type="date" id="pdate" required/></div>
+          <div class="form-group"><label>Preferred time *</label>
+            <select id="ptime" required>
+              <option value="">Select time</option>
+              <option>8:00 AM</option><option>9:00 AM</option><option>10:00 AM</option>
+              <option>11:00 AM</option><option>12:00 PM</option><option>2:00 PM</option>
+              <option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group"><label>Additional notes</label><textarea id="notes" placeholder="Briefly describe your condition or any specific concerns..."></textarea></div>
+        <button class="submit-btn" id="submitBtn" onclick="submitBooking()">Confirm booking</button>
+        <div class="success-msg" id="successMsg">✓ Booking received! Dr. Kalyan will contact you within 24 hours to confirm your slot.</div>
+        <div class="error-msg" id="errorMsg">Something went wrong. Please call us directly at +91 72072 31431.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Physio<span>Plus</span></div>
+  <p>© 2025 PhysioPlus Clinic — Dr. Siva Kalyan Reddy, PT. All rights reserved.</p>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#booking">Book</a></li>
+  </ul>
+</footer>
+
+<script>
+async function submitBooking(){
+  const fname=document.getElementById('fname').value.trim();
+  const lname=document.getElementById('lname').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const service=document.getElementById('service').value;
+  const pdate=document.getElementById('pdate').value;
+  const ptime=document.getElementById('ptime').value;
+  const notes=document.getElementById('notes').value.trim();
+  if(!fname||!lname||!phone||!service||!pdate||!ptime){
+    alert('Please fill in all required fields.');return;
+  }
+  const btn=document.getElementById('submitBtn');
+  btn.disabled=true;btn.textContent='Sending...';
+  try{
+    const res=await fetch('https://formspree.io/f/mrerepjg',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        'Patient Name':fname+' '+lname,
+        'Phone':phone,
+        'Email':email||'Not provided',
+        'Service':service,
+        'Preferred Date':pdate,
+        'Preferred Time':ptime,
+        'Notes':notes||'None',
+        '_subject':'New Appointment Booking — PhysioPlus: '+fname+' '+lname
+      })
+    });
+    if(res.ok){
+      document.getElementById('successMsg').style.display='block';
+      document.getElementById('errorMsg').style.display='none';
+      btn.style.display='none';
+      document.getElementById('fname').value='';
+      document.getElementById('lname').value='';
+      document.getElementById('phone').value='';
+      document.getElementById('email').value='';
+      document.getElementById('service').value='';
+      document.getElementById('pdate').value='';
+      document.getElementById('ptime').value='';
+      document.getElementById('notes').value='';
+    } else {
+      throw new Error('Failed');
+    }
+  } catch(e){
+    document.getElementById('errorMsg').style.display='block';
+    btn.disabled=false;btn.textContent='Confirm booking';
+  }
+}
+document.getElementById('pdate').min=new Date().toISOString().split('T')[0];
+</script>
+</body>
+</html>
